@@ -40,8 +40,10 @@
 - (void)cartButtonClicked:(UIButton *)button {
     // 调用"购物车组件"获取购物车详情页
     id<CSCartProtocol> cartApi = [CSModuleManager instanceForProtocol:@protocol(CSCartProtocol)];
-    UIViewController *cartVC = [cartApi createCartViewController];
-    [self.navigationController pushViewController:cartVC animated:YES];
+    if (cartApi) {
+        UIViewController *cartVC = [cartApi createCartViewController];
+        [self.navigationController pushViewController:cartVC animated:YES];
+    }
 }
 
 #pragma mark - UITableViewDataSource
@@ -60,11 +62,11 @@
     
     // 调用"商品组件"获取商品名称
     id<CSGoodsProtocol> goodsApi = [CSModuleManager instanceForProtocol:@protocol(CSGoodsProtocol)];
-    NSString *goodsName = [goodsApi goodsNameForGoodsId:goodsId];
+    NSString *goodsName = goodsApi ? [goodsApi goodsNameForGoodsId:goodsId] : @"";
     
     // 调用"购物车组件"获取购物车对应商品数量
     id<CSCartProtocol> cartApi = [CSModuleManager instanceForProtocol:@protocol(CSCartProtocol)];
-    NSUInteger goodsCount = [cartApi countForGoodsId:goodsId];
+    NSUInteger goodsCount = cartApi ? [cartApi countForGoodsId:goodsId] : 0;
         
     cell.textLabel.text = goodsName;
     cell.detailTextLabel.text = [NSString stringWithFormat:@"数量: %ld", goodsCount];
@@ -79,7 +81,9 @@
     
     // 调用"商品组件"获取商品详情页
     id<CSGoodsProtocol> api = [CSModuleManager instanceForProtocol:@protocol(CSGoodsProtocol)];
-    UIViewController *goodsVC = [api crateGoodsViewControllerWithGoodsId:goodsId];
-    [self.navigationController pushViewController:goodsVC animated:YES];
+    if (api) {
+        UIViewController *goodsVC = [api crateGoodsViewControllerWithGoodsId:goodsId];
+        [self.navigationController pushViewController:goodsVC animated:YES];
+    }
 }
 @end
