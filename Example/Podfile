@@ -1,0 +1,16 @@
+use_frameworks!
+
+platform :ios, '8.0'
+
+target 'CSModule_Example' do
+  pod 'CSModule', :path => '../'
+  pod 'CSModule_Goods', :path => '../../CSModule_Goods/'
+  pod 'CSModule_Cart', :path => '../../CSModule_Cart/'
+  
+  pod 'Masonry'
+
+  target 'CSModule_Tests' do
+    inherit! :search_paths
+
+  end
+end

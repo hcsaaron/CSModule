@@ -1,0 +1,37 @@
+PODS:
+  - CSModule (0.1.0)
+  - CSModule_Cart (0.1.0):
+    - CSModule
+    - Masonry
+  - CSModule_Goods (0.1.0):
+    - CSModule
+    - Masonry
+  - Masonry (1.1.0)
+
+DEPENDENCIES:
+  - CSModule (from `../`)
+  - CSModule_Cart (from `../../CSModule_Cart/`)
+  - CSModule_Goods (from `../../CSModule_Goods/`)
+  - Masonry
+
+SPEC REPOS:
+  trunk:
+    - Masonry
+
+EXTERNAL SOURCES:
+  CSModule:
+    :path: "../"
+  CSModule_Cart:
+    :path: "../../CSModule_Cart/"
+  CSModule_Goods:
+    :path: "../../CSModule_Goods/"
+
+SPEC CHECKSUMS:
+  CSModule: f5f14d23f711150b5d2e24ee27e4af8820b3700b
+  CSModule_Cart: f6d147d41b78079e4ce9cfc1e770576195fc80ea
+  CSModule_Goods: 6743147f8ed2d526473eba42633ad82a7ff38c59
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+
+PODFILE CHECKSUM: 80165340c4c96e2e5b00e936afe46f00ba4ccc55
+
+COCOAPODS: 1.10.0.rc.1
