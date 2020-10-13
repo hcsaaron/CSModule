@@ -10,8 +10,8 @@ PODS:
 
 DEPENDENCIES:
   - CSModule (from `../`)
-  - CSModule_Cart (from `../../CSModule_Cart/`)
-  - CSModule_Goods (from `../../CSModule_Goods/`)
+  - CSModule_Cart (from `https://github.com/hcsaaron/CSModule_Cart.git`)
+  - CSModule_Goods (from `https://github.com/hcsaaron/CSModule_Goods.git`)
   - Masonry
 
 SPEC REPOS:
@@ -22,16 +22,24 @@ EXTERNAL SOURCES:
   CSModule:
     :path: "../"
   CSModule_Cart:
-    :path: "../../CSModule_Cart/"
+    :git: https://github.com/hcsaaron/CSModule_Cart.git
   CSModule_Goods:
-    :path: "../../CSModule_Goods/"
+    :git: https://github.com/hcsaaron/CSModule_Goods.git
+
+CHECKOUT OPTIONS:
+  CSModule_Cart:
+    :commit: 0b7d68cbc5435bcc38e035f8d43f2c1b9a9675f3
+    :git: https://github.com/hcsaaron/CSModule_Cart.git
+  CSModule_Goods:
+    :commit: 0025f8e3305efa07fa9cab4fbc804c3878a451a2
+    :git: https://github.com/hcsaaron/CSModule_Goods.git
 
 SPEC CHECKSUMS:
   CSModule: f5f14d23f711150b5d2e24ee27e4af8820b3700b
-  CSModule_Cart: f6d147d41b78079e4ce9cfc1e770576195fc80ea
+  CSModule_Cart: 29c7cf0157eb021c5129996553d7edc48c6fd6f0
   CSModule_Goods: 6743147f8ed2d526473eba42633ad82a7ff38c59
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
 
-PODFILE CHECKSUM: 80165340c4c96e2e5b00e936afe46f00ba4ccc55
+PODFILE CHECKSUM: 27f8c3d9ff11463774b21a03af7ace6f30d5c742
 
 COCOAPODS: 1.10.0.rc.1
